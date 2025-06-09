@@ -1,0 +1,26 @@
+<app-topmenu></app-topmenu>
+  <p>This tool adds PMC related fields as needed based on the 022, 210, 999, and 510 fields. Records must be saved prior to using this tool</p>
+
+  <div>
+    <div *ngIf="bib; else nobib">
+        <p>Bibliographic record:</p>
+            <ul>
+                <li><strong>MMS ID: </strong>{{ bib.mms_id }}</li>
+                <li><strong>Title: </strong>{{ bib.title }}</li>
+                <li><strong>Author: </strong>{{ bib.author }}</li>
+            </ul>
+            <button (click)="runChecks()" mat-flat-button color="primary">Run Checks</button>
+            <div *ngIf="checksRun">
+                <ul>
+                    <li *ngFor="let result of checkResults">{{ result}}</li>
+                </ul>
+                <p *ngFor="let result of summaryCheck">{{ result}}</p>
+                <button *ngIf="showAddPmcButton" (click)="addPmcFields()" mat-flat-button color="primary" allow-modals	>Add PMC Fields</button>
+                <p class="themed-box"*ngIf="!showAddPmcButton">{{ manualUpdateText }}</p>
+             </div>
+    </div>
+        <ng-template #nobib>      
+            Please navigate to a bibliographic record.
+        </ng-template>
+</div>
+

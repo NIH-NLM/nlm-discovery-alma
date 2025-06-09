@@ -1,0 +1,72 @@
+<app-topmenu>
+  <div buttons>
+    <button mat-flat-button color="secondary" [disabled]="selectedEntities.length==0 || formVisible" (click)="selectEntities.clear()">Clear</button>
+    <button mat-flat-button color="primary" [disabled]="selectedEntities.length==0 || formVisible" (click)="showForm()">Next</button>
+  </div>
+</app-topmenu>
+
+
+<div *ngIf="!formVisible" >
+  <p >A total of <strong>{{ selectedEntities.length }}</strong> items have been selected.</p>
+  <div *ngIf="count == 0">Please navigate to a list.</div>
+  <eca-select-entities #selectEntities 
+    [(selected)]="selectedEntities"
+    (count)="count=$event"
+    >
+  </eca-select-entities>
+</div>
+
+<!-- Display Form -->
+<div *ngIf="formVisible">
+  <h2>Enter Details for Selected Records</h2>
+  <div>
+    <label id="">Select the Previous Title</label>
+    <mat-radio-group *ngFor="let entity of selectedEntities"
+      aria-label="Select an option"
+       [(ngModel)]="selectedMmsId"
+       [value]="entity.id"
+       (change)="onTitleSelectionChange()">
+      <mat-radio-button [value]="entity.id">{{entity.id}} / {{entity.description}}</mat-radio-button>   
+    </mat-radio-group>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Year Ceased</mat-label>
+        <input matInput [(ngModel)]="yearCeased" minlength="4" maxlength="4" placeholder="YYYY" required>
+        <mat-hint align="end">4 Digit Year</mat-hint>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Full ceased details </mat-label>
+        <input matInput [(ngModel)]="ceasedDetails" placeholder="Volume, issue (Month YYYY)." required>
+        <mat-hint align="end">Volume XX, issue xx (Month YYYY).</mat-hint>
+      </mat-form-field>
+      
+      <mat-form-field appearance="fill">
+        <mat-label>Previous Title Continuation Type</mat-label>
+        <mat-select [(ngModel)]="prevContinuationType" required>
+          <mat-option value="0">0 - Continued by</mat-option>
+          <mat-option value="1">1 - Continues in part by</mat-option>
+          <mat-option value="4">4 - Absorbed by</mat-option>
+          <mat-option value="5">5 - Absorbed in part by</mat-option>
+        </mat-select>
+      </mat-form-field> 
+            
+      <mat-form-field appearance="fill">
+        <mat-label>New Title Continuation Type</mat-label>
+        <mat-select [(ngModel)]="newContinuationType" required>
+          <mat-option value="0">0 - Continues</mat-option>
+          <mat-option value="1">1 - Continues in part</mat-option>
+          <mat-option value="4">4 - Absorbed</mat-option>
+          <mat-option value="5">5 - Absorbed in part</mat-option>
+        </mat-select>
+      </mat-form-field> 
+      <p> See the <a href="https://www.loc.gov/marc/bibliographic/bd760787.html"  target="_blank">Library of Congress page</a>  for more details on continuation type options.</p>
+
+  <div class="eca-actions">
+    <button mat-flat-button color="secondary" (click)="goBack()">Back</button>
+    <button mat-flat-button color="primary" (click)="submitForm()" >Submit</button>
+  </div>
+
+</div>
+
+

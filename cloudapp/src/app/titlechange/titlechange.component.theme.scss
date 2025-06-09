@@ -1,0 +1,17 @@
+@use "@angular/material" as mat;
+
+@mixin titlechange-component-theme($theme, $typgraphy) {
+  app-titlechange .mat-mdc-tab-group.mat-tabs-with-background > .mat-mdc-tab-header {
+    color: mat.get-theme-color($theme, on-secondary-fixed-variant);
+    background-color: mat.get-theme-color($theme, secondary-fixed);
+    
+    .mat-mdc-tab {
+      &.mdc-tab--active .mdc-tab__text-label {
+        color: mat.get-theme-color($theme, on-secondary-fixed);
+      }
+      &:hover {
+        background-color: mat.get-theme-color($theme, secondary-fixed-dim);
+      }
+    }
+  }
+}

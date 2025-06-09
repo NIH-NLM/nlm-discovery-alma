@@ -1,0 +1,20 @@
+{
+   "id": "nlm-apps",
+   "title": "NLM Apps",
+   "subtitle": "NLM applications",
+   "author": "NLM",
+   "description": "Alma cloud applications developed for NLM. Currently in Beta",
+   "relevantForInst": [
+      "01NLM_INST"
+   ],
+   "icon": {
+      "type": "url",
+      "value": "/assets/NLM-logo.png"
+   },
+   "contentSecurity": {
+      "sandbox": {
+         "popups": true,
+         "modals": true
+      }
+   }
+}

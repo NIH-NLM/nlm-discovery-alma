@@ -1,0 +1,17 @@
+<section>
+  <h1>Development Version</h1>
+    <p>The NLM cloud app includes the following functions:</p>
+    <ul>
+      <li>PMC Forthcoming</li>
+      <li>Title Change</li>
+    </ul>
+    <div style="margin-bottom:10px;" class="highlight">Navigate to a record page in Alma and select a function below to begin</div>
+  <eca-menu>
+    <eca-menu-item *ngFor="let item of menu" [title]="item.title" [routerLink]="item.link" [icon]="item.icon">{{item.text}}</eca-menu-item>
+  </eca-menu>
+</section>
+
+
+  
+
+

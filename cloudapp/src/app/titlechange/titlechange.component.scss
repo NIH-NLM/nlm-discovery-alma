@@ -1,0 +1,23 @@
+.settings-section {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: flex-start;
+    margin: 10px 0;
+  }
+  
+  .settings-control {
+    margin: 0 10px;
+  }
+  
+  li {
+    margin-bottom: 5px;
+  }
+  
+  mat-card {
+    margin-bottom: 20px
+  }
+  
+  /*button {
+    margin-bottom: 20px;
+  }*/
