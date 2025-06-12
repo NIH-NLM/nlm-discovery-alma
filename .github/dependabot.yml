@@ -9,7 +9,9 @@ updates:
   # Enable version updates for npm
   - package-ecosystem: "npm"
     # Look for `package.json` and `lock` files in the `root` directory
-    directory: "."
+    directory: "/"
+    schedule:
+      interval: "daily"
     # Check the npm registry for updates every day (weekdays)
     allow:
       # allow both direct and indirect updates for all packages
