@@ -19,8 +19,8 @@
     "@angular/platform-browser": "~11.2.14",
     "@angular/platform-browser-dynamic": "~11.2.14",
     "@angular/router": "~11.2.14",
-    "@exlibris/exl-cloudapp-angular-lib": "^1.4.7",
-    "@exlibris/exl-cloudapp-base": "^1.4.7",
+    "@exlibris/exl-cloudapp-angular-lib": "^2.0.2",
+    "@exlibris/exl-cloudapp-base": "^2.0.2",
     "@ngx-translate/core": "~13.0.0",
     "eca-components": "^1.4.4",
     "lodash": "~4.17.21",
@@ -28,7 +28,7 @@
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.1102.14",
+    "@angular-devkit/build-angular": "~20.0.2",
     "@angular/cli": "~11.2.13",
     "@angular/compiler-cli": "~11.2.14",
     "@types/jasmine": "~3.5.0",
