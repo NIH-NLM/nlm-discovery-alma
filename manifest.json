@@ -1,15 +1,15 @@
 {
-   "id": "nlm-apps",
-   "title": "NLM Apps",
-   "subtitle": "NLM applications",
+   "id": "NLM Automation",
+   "title": "NLM Automation and Validation",
+   "subtitle": "",
    "author": "NLM",
-   "description": "Alma cloud applications developed for NLM. Currently in Beta",
+   "description": "Cataloging tools developed for NLM. Currently in Beta",
    "relevantForInst": [
       "01NLM_INST"
    ],
    "icon": {
       "type": "url",
-      "value": "/assets/NLM-logo.png"
+      "value": "/assets/NLM_logo.png"
    },
    "contentSecurity": {
       "sandbox": {

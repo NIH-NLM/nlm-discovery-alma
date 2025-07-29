@@ -390,7 +390,7 @@ const dom = (name: string, options: {parent?: Element | Node, text?:
   let element = document.createElementNS(ns, name);
 
   if (options.parent) options.parent.appendChild(element);
-  if (options.text) element.innerHTML = options.text;
+  if (options.text) element.textContent = options.text;
   if (options.className) element.className = options.className;
   if (options.id) element.id = options.id;
   if (options.attributes) options.attributes.forEach(([att, val]) => element.setAttribute(att, val));
